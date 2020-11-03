@@ -63,7 +63,9 @@ const createFormGroup = ({
   if (name === 'heuresortie') {
     input.value = getCurrentTime()
   }
-
+  if (input.placeholder != '') {
+    input.value = input.placeholder
+  }
   const validityAttrs = {
     className: 'validity',
   }
