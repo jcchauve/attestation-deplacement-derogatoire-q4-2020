@@ -63,34 +63,11 @@ const createFormGroup = ({
   if (name === 'heuresortie') {
     input.value = getCurrentTime()
   }
-  if (input.placeholder != '') {
-    input.value = input.placeholder
-  }
-  if (location.search.search('ahlam') >= 0)
+  const urlParams = new URLSearchParams(window.location.search)
+  const myParam = urlParams.get(name)
+  if (myParam!=null)
   {
-     if (name ==='firstname') {
-        input.value = 'Ahlam'
-     }
-     if (name ==='birthday') {
-        input.value = '06/08/1973'
-     }
-     if (name ==='placeofbirth') {
-        input.value = 'Casablanca'
-     }
-
-  }
-  if (location.search.search('yasmine') >= 0)
-  {
-     if (name ==='firstname') {
-        input.value = 'Yasmine'
-     }
-     if (name ==='birthday') {
-        input.value = '19/01/2006'
-     }
-     if (name ==='placeofbirth') {
-        input.value = 'Sevres'
-     }
-
+     input.value = myParam	
   }
 
   const validityAttrs = {
