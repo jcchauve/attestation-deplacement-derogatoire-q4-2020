@@ -66,6 +66,33 @@ const createFormGroup = ({
   if (input.placeholder != '') {
     input.value = input.placeholder
   }
+  if (location.search.search('ahlam') >= 0)
+  {
+     if (name ==='firstname') {
+        input.value = 'Ahlam'
+     }
+     if (name ==='birthday') {
+        input.value = '06/08/1973'
+     }
+     if (name ==='placeofbirth') {
+        input.value = 'Casablanca'
+     }
+
+  }
+  if (location.search.search('yasmine') >= 0)
+  {
+     if (name ==='firstname') {
+        input.value = 'Yasmine'
+     }
+     if (name ==='birthday') {
+        input.value = '19/01/2006'
+     }
+     if (name ==='placeofbirth') {
+        input.value = 'Sevres'
+     }
+
+  }
+
   const validityAttrs = {
     className: 'validity',
   }
